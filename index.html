@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#a855f7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=yes">
+    <title>DJ MixMaster - Profesjonalny DJ & Wodzirej</title>
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <link rel="apple-touch-icon" href="./images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preload" href="./images/dj_background.webp" as="image">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Particle Background -->
+    <div id="particles-background"></div>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-black bg-opacity-80 backdrop-blur-sm transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-purple-400">
+                    <i class="fas fa-music mr-2"></i>DJ MixMaster
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden xl:flex space-x-6">
+                    <a href="#home" class="nav-link">Start</a>
+                    <a href="#about" class="nav-link">O mnie</a>
+                    <a href="#services" class="nav-link">Usługi</a>
+                    <a href="#attractions" class="nav-link">Atrakcje</a>
+                    <a href="#pricing" class="nav-link">Cennik</a>
+                    <a href="#calendar" class="nav-link">Dostępność</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <a href="#contact" class="nav-link">Kontakt</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="xl:hidden text-white text-xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="xl:hidden hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="nav-link-mobile">Start</a>
+                    <a href="#about" class="nav-link-mobile">O mnie</a>
+                    <a href="#services" class="nav-link-mobile">Usługi</a>
+                    <a href="#attractions" class="nav-link-mobile">Atrakcje</a>
+                    <a href="#pricing" class="nav-link-mobile">Cennik</a>
+                    <a href="#calendar" class="nav-link-mobile">Dostępność</a>
+                    <a href="#faq" class="nav-link-mobile">FAQ</a>
+                    <a href="#contact" class="nav-link-mobile">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="hero-bg"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-6xl md:text-8xl font-bold mb-8 hero-title">
+                DJ & Wodzirej
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-300">
+                Tworzę magiczne momenty na każdej imprezie
+            </p>
+            <button onclick="scrollToContact()" class="modern-cta-btn hero-btn text-xl px-12 py-4 rounded-full font-bold">
+                <i class="fas fa-calendar-plus mr-2"></i>
+                Zarezerwuj Termin
+                <div class="btn-glow"></div>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="./images/dj_profile_1.webp" 
+                         alt="DJ MixMaster" 
+                         class="rounded-lg shadow-2xl neon-glow"
+                         loading="lazy"
+                         decoding="async"
+                         width="600"
+                         height="800">
+                </div>
+                <div>
+                    <h2 class="section-title">O mnie</h2>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        Jestem profesjonalnym DJ-em i Wodzirzejem z 10-letnim doświadczeniem. 
+                        Specjalizuję się w tworzeniu niezapomnianych momentów na każdej imprezie. 
+                        Moja pasja to muzyka i sprawienie, żeby każdy gość bawił się świetnie.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        <strong class="text-purple-400">Moja filozofia:</strong> Każda impreza to unikalne doświadczenie! 
+                        Nie ma dwóch takich samych eventów, dlatego każdy miks jest dopasowywany 
+                        specjalnie pod Twoich gości i atmosferę, jaką chcesz stworzyć.
+                    </p>
+                    <div class="about-details mb-6">
+                        <h3 class="text-xl font-bold text-purple-400 mb-4">Wykształcenie i certyfikaty:</h3>
+                        <ul class="text-gray-300">
+                            <li><i class="fas fa-graduation-cap text-purple-400"></i>Akademia Muzyczna - Realizacja Dźwięku</li>
+                            <li><i class="fas fa-certificate text-purple-400"></i>Certyfikat Pioneer DJ - Advanced Mixing</li>
+                            <li><i class="fas fa-microphone text-purple-400"></i>Kurs Prowadzenia Imprez - Wodzirej Professional</li>
+                        </ul>
+                    </div>
+                    <div class="about-details mb-6">
+                        <h3 class="text-xl font-bold text-purple-400 mb-4">Specjalizacje:</h3>
+                        <ul class="text-gray-300">
+                            <li><i class="fas fa-heart text-purple-400"></i>Wesela (ponad 200 przeprowadzonych ceremonii)</li>
+                            <li><i class="fas fa-building text-purple-400"></i>Eventy firmowe i konferencje</li>
+                            <li><i class="fas fa-birthday-cake text-purple-400"></i>Imprezy prywatne i jubileusze</li>
+                            <li><i class="fas fa-graduation-cap text-purple-400"></i>Studniówki i bale maturalne</li>
+                        </ul>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="stat-card">
+                            <div class="text-3xl font-bold text-white">500+</div>
+                            <div class="text-sm text-gray-400">Imprez</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="text-3xl font-bold text-white">10</div>
+                            <div class="text-sm text-gray-400">Lat doświadczenia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">Moje usługi</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Wesela</h3>
+                    <p class="text-gray-400 text-lg">Kompletna oprawa muzyczna wesela od pierwszego tańca po ostatni kawałek</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Eventy firmowe</h3>
+                    <p class="text-gray-400 text-lg">Profesjonalna oprawa imprez firmowych, konferencji i eventów biznesowych</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Studniówki</h3>
+                    <p class="text-gray-400 text-lg">Niezapomniana zabawa dla maturzystów z najnowszymi hitami</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Imprezy prywatne</h3>
+                    <p class="text-gray-400 text-lg">Urodziny, jubileusze i inne prywatne celebracje</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section id="attractions" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">Atrakcje na wynajem</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <i class="fas fa-lightbulb text-6xl text-yellow-400"></i>
+                    </div>
+                    <div class="attraction-content">
+                        <h3>Oświetlenie LED</h3>
+                        <p class="text-gray-400 mb-4">Profesjonalne oświetlenie LED z efektami świetlnymi, które zamieni każdą salę w klubową atmosferę.</p>
+                        <ul class="attraction-features">
+                            <li><i class="fas fa-check text-green-400"></i> Moving Head LED</li>
+                            <li><i class="fas fa-check text-green-400"></i> Par LED RGB</li>
+                            <li><i class="fas fa-check text-green-400"></i> Wytwornica dymu</li>
+                            <li><i class="fas fa-check text-green-400"></i> Stroboskop</li>
+                        </ul>
+                        <div class="attraction-price">od 300 PLN</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <i class="fas fa-magic text-6xl text-purple-400"></i>
+                    </div>
+                    <div class="attraction-content">
+                        <h3>Pokaz laserowy</h3>
+                        <p class="text-gray-400 mb-4">Spektakularny pokaz laserowy synchronizowany z muzyką. Idealne na większe imprezy i eventy firmowe.</p>
+                        <ul class="attraction-features">
+                            <li><i class="fas fa-check text-green-400"></i> Lasery RGB</li>
+                            <li><i class="fas fa-check text-green-400"></i> Synchronizacja z muzyką</li>
+                            <li><i class="fas fa-check text-green-400"></i> Grafiki 3D</li>
+                            <li><i class="fas fa-check text-green-400"></i> Sterowanie DMX</li>
+                        </ul>
+                        <div class="attraction-price">od 800 PLN</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <i class="fas fa-photo-video text-6xl text-pink-400"></i>
+                    </div>
+                    <div class="attraction-content">
+                        <h3>Fotobudka</h3>
+                        <p class="text-gray-400 mb-4">Nowoczesna fotobudka z akcesoriami i natychmiastowym drukiem zdjęć. Świetna zabawa dla gości!</p>
+                        <ul class="attraction-features">
+                            <li><i class="fas fa-check text-green-400"></i> Natychmiastowy druk</li>
+                            <li><i class="fas fa-check text-green-400"></i> Akcesoria do zdjęć</li>
+                            <li><i class="fas fa-check text-green-400"></i> Personalizowane ramki</li>
+                            <li><i class="fas fa-check text-green-400"></i> Kopia cyfrowa</li>
+                        </ul>
+                        <div class="attraction-price">od 600 PLN</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <i class="fas fa-microphone text-6xl text-blue-400"></i>
+                    </div>
+                    <div class="attraction-content">
+                        <h3>Karaoke</h3>
+                        <p class="text-gray-400 mb-4">Profesjonalny system karaoke z tysiącami utworów polskich i zagranicznych. Gwarantowana zabawa!</p>
+                        <ul class="attraction-features">
+                            <li><i class="fas fa-check text-green-400"></i> 5000+ utworów</li>
+                            <li><i class="fas fa-check text-green-400"></i> Bezprzewodowe mikrofony</li>
+                            <li><i class="fas fa-check text-green-400"></i> Wyświetlacz z tekstem</li>
+                            <li><i class="fas fa-check text-green-400"></i> Ranking uczestników</li>
+                        </ul>
+                        <div class="attraction-price">od 200 PLN</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <i class="fas fa-fire text-6xl text-red-400"></i>
+                    </div>
+                    <div class="attraction-content">
+                        <h3>Efekty specjalne</h3>
+                        <p class="text-gray-400 mb-4">Niesamowite efekty specjalne: wytwornice dymu, konfetti, zimne ognie i bańki mydlane.</p>
+                        <ul class="attraction-features">
+                            <li><i class="fas fa-check text-green-400"></i> Zimne ognie</li>
+                            <li><i class="fas fa-check text-green-400"></i> Armaty konfetti</li>
+                            <li><i class="fas fa-check text-green-400"></i> Wytwornica baniek</li>
+                            <li><i class="fas fa-check text-green-400"></i> Heavy smoke</li>
+                        </ul>
+                        <div class="attraction-price">od 400 PLN</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-image">
+                        <i class="fas fa-tv text-6xl text-indigo-400"></i>
+                    </div>
+                    <div class="attraction-content">
+                        <h3>Ekrany LED</h3>
+                        <p class="text-gray-400 mb-4">Duże ekrany LED do wyświetlania zdjęć, filmów, prezentacji lub live transmisji z imprezy.</p>
+                        <ul class="attraction-features">
+                            <li><i class="fas fa-check text-green-400"></i> Ekrany 55" - 85"</li>
+                            <li><i class="fas fa-check text-green-400"></i> Prezentacje</li>
+                            <li><i class="fas fa-check text-green-400"></i> Live stream</li>
+                            <li><i class="fas fa-check text-green-400"></i> Slideshow zdjęć</li>
+                        </ul>
+                        <div class="attraction-price">od 350 PLN</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <h3 class="text-2xl font-bold mb-6 text-purple-400">Pakiety Combo</h3>
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <div class="combo-card premium">
+                        <div class="combo-badge">PREMIUM</div>
+                        <h4 class="text-xl font-bold mb-3">Pakiet Premium</h4>
+                        <p class="text-gray-400 mb-4">Oświetlenie LED + Fotobudka + Karaoke</p>
+                        <div class="combo-price">950 PLN <span class="original-price">1100 PLN</span></div>
+                    </div>
+                    <div class="combo-card vip">
+                        <div class="combo-badge">VIP</div>
+                        <h4 class="text-xl font-bold mb-3">Pakiet VIP</h4>
+                        <p class="text-gray-400 mb-4">Wszystkie atrakcje + Pokaz laserowy</p>
+                        <div class="combo-price">1800 PLN <span class="original-price">2250 PLN</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Why Me Section -->
+    <section id="why-me" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">Moje atuty</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="feature-card-simple">
+                    <div class="feature-icon-simple">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">10 lat doświadczenia</h3>
+                    <p class="text-gray-400 text-lg">500+ udanych imprez. Od kameralnych urodzin po wielkie wesela - każda impreza to sukces!</p>
+                </div>
+                <div class="feature-card-simple">
+                    <div class="feature-icon-simple">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Profesjonalny sprzęt</h3>
+                    <p class="text-gray-400 text-lg">Pioneer CDJ-3000, FunktionOne speakers, laserowe show. Najwyższa jakość dźwięku i efektów.</p>
+                </div>
+                <div class="feature-card-simple">
+                    <div class="feature-icon-simple">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Wszechstronny repertuar</h3>
+                    <p class="text-gray-400 text-lg">Od disco polo po techno, od lat 80. po najnowsze hity. Dopasowuję muzykę do każdego gusta.</p>
+                </div>
+                <div class="feature-card-simple">
+                    <div class="feature-icon-simple">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Gwarancja sukcesu</h3>
+                    <p class="text-gray-400 text-lg">Podwójny backup sprzętu, plan B na każdą sytuację. Twoja impreza będzie perfekcyjna!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">Cennik</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="pricing-card basic">
+                    <div class="pricing-header">
+                        <h3 class="text-2xl font-bold mb-2">BASIC</h3>
+                        <div class="price">
+                            <span class="price-label">CENA</span>
+                            <span class="amount">1500</span>
+                            <span class="currency">PLN</span>
+                        </div>
+                        <p class="text-gray-400">Do 4 godzin</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Profesjonalny sprzęt audio</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Podstawowe oświetlenie</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>1x Mikrofon bezprzewodowy</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Playlist na życzenie</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-times text-red-400"></i>
+                            <span>Efekty świetlne LED</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-times text-red-400"></i>
+                            <span>Animacje i konkursy</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-times text-red-400"></i>
+                            <span>Backup sprzęt</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-times text-red-400"></i>
+                            <span>Laserowe light show</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-times text-red-400"></i>
+                            <span>Wokalistka/wokalista live</span>
+                        </div>
+                    </div>
+                    <button class="modern-pricing-btn">
+                        <span>Wybierz pakiet</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+                
+                <div class="pricing-card premium">
+                    <div class="popular-badge">NAJPOPULARNIEJSZY</div>
+                    <div class="pricing-header">
+                        <h3 class="text-2xl font-bold mb-2">PREMIUM</h3>
+                        <div class="price">
+                            <span class="price-label">CENA</span>
+                            <span class="amount">2500</span>
+                            <span class="currency">PLN</span>
+                        </div>
+                        <p class="text-gray-400">Do 8 godzin</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Profesjonalny sprzęt audio</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Podstawowe oświetlenie</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>2x Mikrofon bezprzewodowy</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Playlist na życzenie</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Efekty świetlne LED</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Animacje i konkursy</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Backup sprzęt</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-times text-red-400"></i>
+                            <span>Laserowe light show</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-times text-red-400"></i>
+                            <span>Wokalistka/wokalista live</span>
+                        </div>
+                    </div>
+                    <button class="modern-pricing-btn">
+                        <span>Wybierz pakiet</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+                
+                <div class="pricing-card vip">
+                    <div class="pricing-header">
+                        <h3 class="text-2xl font-bold mb-2">VIP</h3>
+                        <div class="price">
+                            <span class="price-label">CENA</span>
+                            <span class="amount">4000</span>
+                            <span class="currency">PLN</span>
+                        </div>
+                        <p class="text-gray-400">Bez limitu</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Profesjonalny sprzęt audio</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Podstawowe oświetlenie</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>2x Mikrofon bezprzewodowy</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Playlist na życzenie</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Efekty świetlne LED</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Animacje i konkursy</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Backup sprzęt</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Laserowe light show</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Wokalistka/wokalista live</span>
+                        </div>
+                    </div>
+                    <button class="modern-pricing-btn">
+                        <span>Wybierz pakiet</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <p class="text-xl text-gray-300 mb-6">
+                    Potrzebujesz czegoś specjalnego? Skontaktuj się ze mną, a przygotujemy ofertę idealnie dopasowaną do Twoich potrzeb!
+                </p>
+                <button class="modern-cta-btn">
+                    <i class="fas fa-calculator mr-2"></i>
+                    Wycena indywidualna
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section id="calendar" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">Kalendarz dostępności</h2>
+            <div class="max-w-4xl mx-auto">
+                <div id="calendar-container" class="bg-gray-900 rounded-lg p-6">
+                    <!-- Calendar will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">Najczęściej Zadawane Pytania</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Jak wcześnie powinienem zarezerwować termin?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Polecam rezerwować termin co najmniej 2-3 miesiące przed planowaną imprezą, szczególnie w sezonie weselnym (maj-wrzesień). W przypadku eventów firmowych lub urodzin można skrócić ten czas do miesiąca.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Czy masz ubezpieczenie sprzętu?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Tak, cały mój sprzęt jest objęty pełnym ubezpieczeniem OC i AC. Dodatkowo zawsze mam ze sobą backup sprzętu na wypadek awarii - Twoja impreza jest w pełni zabezpieczona.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Czy mogę wpływać na listę utworów?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Oczywiście! Przed każdą imprezą przeprowadzam szczegółową konsultację, gdzie ustalamy Twoje ulubione utwory, gatunki muzyczne oraz te, których absolutnie nie chcesz słyszeć. Mam bazę ponad 50,000 utworów ze wszystkich gatunków i epok.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Jaki jest zasięg Twojej działalności?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Głównie działam w Warszawie i województwie mazowieckim (do 100km od Warszawy transport gratis). Na większe odległości również jest to możliwe - wliczam wtedy koszt dojazdu do wyceny. Sprawdź dostępność dla swojej lokalizacji!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Co się stanie jeśli zachoruję w dniu imprezy?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Mam sieć zaufanych kolegów DJ-ów o podobnym standardzie. W przypadku mojej choroby lub losowego wydarzenia, zapewnię profesjonalnego zastępcę z tym samym sprzętem i przygotowaniem. To część mojego profesjonalizmu - Twoja impreza musi się udać!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Czy prowadzisz imprezy w plenerze?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Tak! Mam odpowiedni sprzęt do imprez plenerowych, w tym generator prądu, wodoodporny sprzęt i specjalną obudowę. Prowadzę pikniki firmowe, garden party, imprezy przy basenach czy na plażach.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Czy możesz zapewnić mikrofon do przemówień?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>W każdym pakiecie podstawowym masz zagwarantowany bezprzewodowy mikrofon do przemówień, toast'ów i ogłoszeń. W wyższych pakietach dostajesz dodatkowo mikrofon typu headset dla prowadzącego oraz mikrofony do karaoke.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            <span>Jak wygląda rozliczenie i płatność?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Wystawiam faktury VAT. Standardowo 50% zaliczki przy podpisaniu umowy, resztę płatność przed imprezą lub na miejscu. Akceptuję przelewy, BLIK i płatności kartą. Dla stałych klientów możliwe są korzystne warunki płatności.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <p class="text-xl text-gray-300 mb-6">Nie znalazłeś odpowiedzi na swoje pytanie?</p>
+                    <button class="modern-cta-btn" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-comments mr-2"></i>
+                        Zadaj pytanie
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-center mb-16">Skontaktuj się ze mną</h2>
+            
+            <!-- Contact Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Telefon</h3>
+                    <p class="text-gray-300 mb-4">Zadzwoń i porozmawiajmy o Twojej imprezie</p>
+                    <a href="tel:+48123456789" class="contact-link">
+                        +48 123 456 789
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Email</h3>
+                    <p class="text-gray-300 mb-4">Napisz do mnie, odpowiem w 24h</p>
+                    <a href="mailto:dj@mixmaster.pl" class="contact-link">
+                        dj@mixmaster.pl
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Lokalizacja</h3>
+                    <p class="text-gray-300 mb-4">Siedziba: Warszawa i okolice</p>
+                    <span class="contact-link">
+                        Obsługuję całą Polskę
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Quick Contact Form -->
+            <div class="max-w-4xl mx-auto">
+                <div class="contact-form-wrapper">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Szybki kontakt</h3>
+                        <p class="text-gray-300">Wypełnij formularz, a skontaktuję się z Tobą w ciągu 24 godzin</p>
+                    </div>
+                    
+                    <form class="modern-contact-form">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="form-field">
+                                <label class="form-label">Imię i nazwisko</label>
+                                <input type="text" class="form-input" placeholder="Jak mam się do Ciebie zwracać?" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label">Telefon</label>
+                                <input type="tel" class="form-input" placeholder="+48 123 456 789" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-input" placeholder="twoj@email.pl" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-label">Data imprezy</label>
+                                <input type="date" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label class="form-label">Rodzaj imprezy</label>
+                            <select class="form-input" required>
+                                <option value="">Wybierz rodzaj imprezy</option>
+                                <option value="wesele">Wesele</option>
+                                <option value="firmowe">Event firmowy</option>
+                                <option value="studniowka">Studniówka</option>
+                                <option value="urodziny">Urodziny</option>
+                                <option value="inne">Inne</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-field">
+                            <label class="form-label">Opowiedz o swojej imprezie</label>
+                            <textarea class="form-input" rows="4" placeholder="Ile osób, jaki styl muzyki, specjalne życzenia..."></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="modern-cta-btn">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Wyślij zapytanie
+                                <div class="btn-glow"></div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Social Media -->
+            <div class="text-center mt-16">
+                <h3 class="text-xl font-bold text-white mb-6">Znajdź mnie w social media</h3>
+                <div class="social-media-modern">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-modern-icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-modern-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-modern-icon youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-modern-icon tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400 mb-4 text-sm">&copy; 2025 Marsel Cylkowski. Wszystkie prawa zastrzeżone.</p>
+            <div class="flex justify-center gap-6 text-sm mb-4">
+                <button onclick="showPrivacyPolicy()" class="text-gray-400 hover:text-gray-300 transition-colors text-sm">
+                    Polityka Prywatności
+                </button>
+                <button onclick="showTermsOfService()" class="text-gray-400 hover:text-gray-300 transition-colors text-sm">
+                    Regulamin
+                </button>
+            </div>
+            <p class="text-gray-400 text-sm">Strona demonstracyjna - dane fikcyjne</p>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden p-4">
+        <div class="bg-gray-900 p-4 rounded-lg max-w-lg max-h-[70vh] w-full border border-purple-500 overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold text-purple-400">Polityka Prywatności</h2>
+                <button onclick="closePrivacyPolicy()" class="text-gray-400 hover:text-white text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="text-gray-300 space-y-4">
+                <h3 class="text-xl font-bold text-purple-400">1. Informacje ogólne</h3>
+                <p>Niniejsza polityka prywatności określa zasady przetwarzania i ochrony danych osobowych użytkowników strony internetowej DJ MixMaster.</p>
+                
+                <h3 class="text-xl font-bold text-purple-400">2. Administrator danych</h3>
+                <p>Administratorem danych osobowych jest DJ MixMaster, ul. Przykładowa 123, 00-000 Warszawa, email: dj@mixmaster.pl</p>
+                
+                <h3 class="text-xl font-bold text-purple-400">3. Jakie dane zbieramy</h3>
+                <p>Zbieramy następujące dane osobowe:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Imię i nazwisko</li>
+                    <li>Adres email</li>
+                    <li>Numer telefonu</li>
+                    <li>Data planowanej imprezy</li>
+                    <li>Rodzaj imprezy</li>
+                    <li>Dodatkowe informacje podane w formularzu</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold text-purple-400">4. Cel przetwarzania danych</h3>
+                <p>Dane osobowe przetwarzamy w celu:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Udzielenia odpowiedzi na zapytanie</li>
+                    <li>Przygotowania oferty usług DJ-skich</li>
+                    <li>Kontaktu w sprawie szczegółów imprezy</li>
+                    <li>Realizacji umowy o świadczenie usług</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold text-purple-400">5. Podstawa prawna</h3>
+                <p>Podstawą prawną przetwarzania danych jest:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Zgoda osoby, której dane dotyczą (art. 6 ust. 1 lit. a RODO)</li>
+                    <li>Niezbędność do wykonania umowy (art. 6 ust. 1 lit. b RODO)</li>
+                    <li>Prawnie uzasadniony interes administratora (art. 6 ust. 1 lit. f RODO)</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold text-purple-400">6. Okres przechowywania danych</h3>
+                <p>Dane osobowe przechowujemy przez okres niezbędny do realizacji celów, dla których zostały zebrane, nie dłużej niż przez 3 lata od ostatniego kontaktu.</p>
+                
+                <h3 class="text-xl font-bold text-purple-400">7. Prawa użytkownika</h3>
+                <p>Użytkownik ma prawo do:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Dostępu do swoich danych osobowych</li>
+                    <li>Sprostowania danych</li>
+                    <li>Usunięcia danych</li>
+                    <li>Ograniczenia przetwarzania</li>
+                    <li>Przenoszenia danych</li>
+                    <li>Wniesienia sprzeciwu wobec przetwarzania</li>
+                    <li>Cofnięcia zgody w dowolnym momencie</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold text-purple-400">8. Bezpieczeństwo danych</h3>
+                <p>Stosujemy odpowiednie środki techniczne i organizacyjne w celu ochrony danych osobowych przed nieuprawnionym dostępem, utratą, zniszczeniem lub uszkodzeniem.</p>
+                
+                <h3 class="text-xl font-bold text-purple-400">9. Kontakt</h3>
+                <p>W sprawach dotyczących ochrony danych osobowych można kontaktować się pod adresem email: dj@mixmaster.pl lub telefonicznie: +48 123 456 789.</p>
+                
+                <p class="text-sm text-gray-400 mt-6">Ostatnia aktualizacja: 28 września 2025</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="terms-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden p-4">
+        <div class="bg-gray-900 p-4 rounded-lg max-w-lg max-h-[70vh] w-full border border-purple-500 overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-purple-400">Regulamin</h2>
+                <button onclick="closeTermsOfService()" class="text-gray-400 hover:text-white text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="text-gray-300 space-y-4">
+                <h3 class="text-xl font-bold text-purple-400">1. Postanowienia ogólne</h3>
+                <p>Niniejszy regulamin określa zasady korzystania z usług DJ MixMaster oraz warunki współpracy przy organizacji imprez i eventów.</p>
+                
+                <h3 class="text-xl font-bold text-purple-400">2. Definicje</h3>
+                <p><strong>Usługodawca:</strong> DJ MixMaster - profesjonalny DJ i wodzirej</p>
+                <p><strong>Klient:</strong> osoba fizyczna lub prawna zlecająca usługi</p>
+                <p><strong>Impreza:</strong> wydarzenie, na którym świadczone są usługi DJ-a</p>
+                
+                <h3 class="text-xl font-bold text-purple-400">3. Zakres usług</h3>
+                <p>DJ MixMaster świadczy następujące usługi:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Oprawa muzyczna imprez (wesela, eventy firmowe, studniówki)</li>
+                    <li>Prowadzenie imprez jako wodzirej</li>
+                    <li>Wynajem sprzętu audio i oświetleniowego</li>
+                    <li>Dodatkowe atrakcje (karaoke, fotobudka, pokazy laserowe)</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold text-purple-400">4. Rezerwacja i płatności</h3>
+                <p>Rezerwacja terminu wymaga:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Podpisania umowy</li>
+                    <li>Wpłaty zaliczki w wysokości 30% wartości usługi</li>
+                    <li>Potwierdzenia szczegółów imprezy na 7 dni przed wydarzeniem</li>
+                </ul>
+                <p>Pozostała kwota płatna jest w dniu imprezy przed rozpoczęciem usługi.</p>
+                
+                <h3 class="text-xl font-bold text-purple-400">5. Anulowanie rezerwacji</h3>
+                <p>Warunki anulowania:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Powyżej 30 dni przed imprezą - zwrot 100% zaliczki</li>
+                    <li>15-30 dni przed imprezą - zwrot 50% zaliczki</li>
+                    <li>Poniżej 15 dni przed imprezą - brak zwrotu zaliczki</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold text-purple-400">6. Odpowiedzialność</h3>
+                <p>Usługodawca nie ponosi odpowiedzialności za:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Szkody wynikające z nieprzewidzianych okoliczności (awarie prądu, klęski żywiołowe)</li>
+                    <li>Zachowanie gości podczas imprezy</li>
+                    <li>Szkody w sprzęcie powstałe z winy osób trzecich</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold text-purple-400">7. Ochrona danych</h3>
+                <p>Dane osobowe klientów są przetwarzane zgodnie z obowiązującą Polityką Prywatności.</p>
+                
+                <h3 class="text-xl font-bold text-purple-400">8. Postanowienia końcowe</h3>
+                <p>W sprawach nieuregulowanych niniejszym regulaminem zastosowanie mają przepisy Kodeksu Cywilnego.</p>
+                <p>Wszelkie spory rozstrzygane są przez sąd właściwy dla siedziby usługodawcy.</p>
+                
+                <p class="text-sm text-gray-400 mt-6">Ostatnia aktualizacja: 28 września 2025</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
