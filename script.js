@@ -1,4 +1,4 @@
-// Scroll to top on page load/refresh
+
 if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
 }
@@ -6,12 +6,12 @@ window.addEventListener('beforeunload', function() {
     window.scrollTo(0, 0);
 });
 
-// DOM Elements
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Scroll to top on page load
+    
     window.scrollTo(0, 0);
     
-    // Initialize all functionality
+    
     initAnimations();
     initCalendar();
     initContactForm();
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Intersection Observer for Animations
+
 function initAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -35,12 +35,12 @@ function initAnimations() {
         });
     }, observerOptions);
 
-    // Observe all animated elements
+    
     const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
     animatedElements.forEach(el => observer.observe(el));
 }
 
-// Interactive Calendar
+
 function initCalendar() {
     const calendarContainer = document.getElementById('calendar-container');
     if (!calendarContainer) return;
@@ -49,7 +49,7 @@ function initCalendar() {
     const currentMonth = currentDate.getMonth();
     const currentYear = currentDate.getFullYear();
 
-    // Sample booked dates (in real application, this would come from backend)
+    
     const bookedDates = [
         '2024-01-15',
         '2024-01-22',
@@ -91,12 +91,12 @@ function initCalendar() {
                 <div class="calendar-day-header p-2 text-center font-bold text-purple-400">Nie</div>
         `;
 
-        // Empty cells for days before the first day of the month
+        
         for (let i = 0; i < adjustedFirstDay; i++) {
             calendarHTML += '<div class="calendar-day p-2"></div>';
         }
 
-        // Days of the month
+        
         for (let day = 1; day <= daysInMonth; day++) {
             const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
             const isBooked = bookedDates.includes(dateStr);
@@ -126,7 +126,7 @@ function initCalendar() {
 
         calendarHTML += '</div>';
 
-        // Legend
+        
         calendarHTML += `
             <div class="calendar-legend flex justify-center gap-6 text-sm">
                 <div class="flex items-center gap-2">
@@ -142,7 +142,7 @@ function initCalendar() {
 
         calendarContainer.innerHTML = calendarHTML;
 
-        // Add event listeners for navigation
+        
         document.getElementById('prevMonth').addEventListener('click', () => {
             const newDate = new Date(year, month - 1, 1);
             createCalendar(newDate.getMonth(), newDate.getFullYear());
@@ -154,24 +154,24 @@ function initCalendar() {
         });
     }
 
-    // Initialize calendar
+    
     createCalendar(currentMonth, currentYear);
 }
 
-// Date Selection Function
+
 window.selectDate = function(element) {
-    // Remove previous selection
+    
     document.querySelectorAll('.calendar-day.selected').forEach(day => {
         day.classList.remove('selected');
     });
 
-    // Add selection to clicked date
+    
     element.classList.add('selected');
     
-    // Get selected date
+    
     const selectedDate = element.getAttribute('data-date');
     
-    // Show confirmation modal or update form
+    
     showDateConfirmation(selectedDate);
 };
 
@@ -183,7 +183,7 @@ function showDateConfirmation(date) {
         day: 'numeric'
     });
 
-    // Create modal
+    
     const modal = document.createElement('div');
     modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
     modal.innerHTML = `
@@ -214,11 +214,11 @@ window.closeModal = function() {
 window.goToContact = function(date) {
     closeModal();
     
-    // Scroll to contact section
+    
     const contactSection = document.querySelector('#contact');
     contactSection.scrollIntoView({ behavior: 'smooth' });
     
-    // Pre-fill date in form
+    
     setTimeout(() => {
         const dateInput = document.querySelector('input[type="date"]');
         if (dateInput) {
@@ -228,7 +228,7 @@ window.goToContact = function(date) {
     }, 1000);
 };
 
-// Contact Form Handler
+
 function initContactForm() {
     const contactForm = document.querySelector('.contact-form');
     if (!contactForm) return;
@@ -236,14 +236,14 @@ function initContactForm() {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form data
+        
         const formData = new FormData(this);
         const data = Object.fromEntries(formData);
         
-        // Show success message
+        
         showSuccessMessage();
         
-        // Reset form
+        
         this.reset();
     });
 }
@@ -267,7 +267,7 @@ function showSuccessMessage() {
     document.body.appendChild(modal);
 }
 
-// Mobile Menu Toggle
+
 function initMobileMenu() {
     const mobileMenuButton = document.querySelector('.md\\:hidden button');
     const navLinks = document.querySelector('.hidden.md\\:flex');
@@ -287,7 +287,7 @@ function initMobileMenu() {
     }
 }
 
-// Navbar Scroll Effect
+
 function initNavbarScroll() {
     const navbar = document.querySelector('nav');
     
@@ -301,20 +301,20 @@ function initNavbarScroll() {
 }
 
 
-// Enhanced Particle Animation System - Mobile Optimized
+
 function initParticles() {
     const particlesContainer = document.getElementById('particles-background');
     if (!particlesContainer) return;
     
-    // Reduce particles on mobile for better performance
+    
     const isMobile = window.innerWidth <= 768;
     const maxParticles = isMobile ? 3 : 8;
     const maxFloatingElements = isMobile ? 0 : 2;
     const particleInterval = isMobile ? 3000 : 1500;
 
-    // Create different types of particles
+    
     function createParticle() {
-        // Skip if user prefers reduced motion
+        
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             return;
         }
@@ -324,7 +324,7 @@ function initParticles() {
         const type = Math.random();
         const speed = ['particle-slow', 'particle-medium', 'particle-fast'][Math.floor(Math.random() * 3)];
         
-        // Different particle types
+        
         let className = 'particle ' + speed;
         if (type < 0.4) {
             className += ' particle-gradient';
@@ -345,7 +345,7 @@ function initParticles() {
         
         particlesContainer.appendChild(particle);
         
-        // Remove particle after animation
+        
         particle.addEventListener('animationend', () => {
             if (particle.parentNode) {
                 particle.parentNode.removeChild(particle);
@@ -353,22 +353,22 @@ function initParticles() {
         });
     }
     
-    // Create initial particles
+    
     for (let i = 0; i < maxParticles; i++) {
         setTimeout(() => createParticle(), Math.random() * 3000);
     }
     
-    // Continuously create new particles - optimized frequency
+    
     let particleIntervalId = setInterval(() => {
         if (particlesContainer.children.length < maxParticles * 1.2) {
             createParticle();
         }
-    }, isMobile ? 200 : 150); // Slower on mobile for better performance
+    }, isMobile ? 200 : 150); 
     
-    // Store interval ID for cleanup
+    
     window.particleIntervalId = particleIntervalId;
     
-    // Add some larger floating elements
+    
     function createFloatingElement() {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             return;
@@ -393,12 +393,12 @@ function initParticles() {
         particlesContainer.appendChild(element);
     }
     
-    // Create floating background elements
+    
     for (let i = 0; i < maxFloatingElements; i++) {
         createFloatingElement();
     }
     
-    // Add floating animation for large elements
+    
     const style = document.createElement('style');
     style.textContent = `
         @keyframes floatLarge {
@@ -410,21 +410,21 @@ function initParticles() {
     `;
     document.head.appendChild(style);
     
-    // Clean up on page unload
+    
     window.addEventListener('beforeunload', () => {
         clearInterval(particleIntervalId);
     });
     
-    // Throttle resize events for better performance
+    
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            // Clear existing intervals before restart
+            
             if (window.particleIntervalId) {
                 clearInterval(window.particleIntervalId);
             }
-            // Restart particles with new mobile detection
+            
             if (particlesContainer) {
                 particlesContainer.innerHTML = '';
                 initParticles();
@@ -434,38 +434,38 @@ function initParticles() {
 }
 
 
-// Enhanced Animation Observer - optimized for performance
+
 function initEnhancedAnimations() {
     const observerOptions = {
-        threshold: 0.15, // Increased threshold for fewer triggers
-        rootMargin: '0px 0px -100px 0px' // Larger margin for better performance
+        threshold: 0.15, 
+        rootMargin: '0px 0px -100px 0px' 
     };
 
-    // Throttle animation observer for better performance
+    
     let animationTimeout;
     const observer = new IntersectionObserver(function(entries) {
         clearTimeout(animationTimeout);
         animationTimeout = setTimeout(() => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    // Staggered animation delay - reduced for better performance
+                    
                     setTimeout(() => {
                         entry.target.classList.add('visible');
-                        // Unobserve after animation to improve performance
+                        
                         observer.unobserve(entry.target);
-                    }, index * 50); // Reduced from 100ms to 50ms
+                    }, index * 50); 
                 }
             });
-        }, 16); // ~60fps throttling
+        }, 16); 
     }, observerOptions);
 
-    // Observe all animated elements
+    
     const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in, .rotate-in');
     animatedElements.forEach(el => observer.observe(el));
 }
 
 
-// Pricing card interactions
+
 function initPricingInteractions() {
     const pricingCards = document.querySelectorAll('.pricing-card');
     pricingCards.forEach(card => {
@@ -511,11 +511,11 @@ function showPricingModal(packageName) {
 window.goToContactForm = function(packageName) {
     closeModal();
     
-    // Scroll to contact section
+    
     const contactSection = document.querySelector('#contact');
     contactSection.scrollIntoView({ behavior: 'smooth' });
     
-    // Pre-fill package in message
+    
     setTimeout(() => {
         const textarea = document.querySelector('textarea');
         if (textarea) {
@@ -525,33 +525,33 @@ window.goToContactForm = function(packageName) {
     }, 1000);
 };
 
-// FAQ Toggle Function
+
 window.toggleFaq = function(button) {
     const faqItem = button.closest('.faq-item');
     const answer = faqItem.querySelector('.faq-answer');
     const isActive = button.classList.contains('active');
     
-    // Close all other FAQ items
+    
     document.querySelectorAll('.faq-question').forEach(q => {
         q.classList.remove('active');
         q.closest('.faq-item').querySelector('.faq-answer').classList.remove('active');
     });
     
-    // Toggle current FAQ item
+    
     if (!isActive) {
         button.classList.add('active');
         answer.classList.add('active');
     }
 };
 
-// Privacy Policy Modal Functions
+
 window.showPrivacyPolicy = function() {
     const modal = document.getElementById('privacy-modal');
     if (modal) {
         modal.classList.remove('hidden');
         document.body.classList.add('modal-open');
         
-        // Scroll modal content to top
+        
         const modalContent = modal.querySelector('.bg-gray-900');
         if (modalContent) {
             modalContent.scrollTop = 0;
@@ -567,14 +567,14 @@ window.closePrivacyPolicy = function() {
     }
 };
 
-// Terms of Service Modal Functions
+
 window.showTermsOfService = function() {
     const modal = document.getElementById('terms-modal');
     if (modal) {
         modal.classList.remove('hidden');
         document.body.classList.add('modal-open');
         
-        // Scroll modal content to top
+        
         const modalContent = modal.querySelector('.bg-gray-900');
         if (modalContent) {
             modalContent.scrollTop = 0;
@@ -590,11 +590,11 @@ window.closeTermsOfService = function() {
     }
 };
 
-// Scroll to contact function
+
 window.scrollToContact = function() {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-        // Calculate offset based on navbar height
+        
         const navbar = document.querySelector('nav');
         const offset = navbar ? navbar.offsetHeight + 20 : 80;
         
@@ -608,22 +608,22 @@ window.scrollToContact = function() {
 
 
 
-// Note: initNavHighlighting removed - functionality merged into initActiveNavigation for better performance
 
-// Close modal when clicking outside
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const privacyModal = document.getElementById('privacy-modal');
     const termsModal = document.getElementById('terms-modal');
     
     if (privacyModal) {
         privacyModal.addEventListener('click', function(e) {
-            // Only close if clicking on the backdrop (not the modal content)
+            
             if (e.target === privacyModal) {
                 closePrivacyPolicy();
             }
         });
         
-        // Prevent clicks inside modal content from closing
+        
         const privacyContent = privacyModal.querySelector('.bg-gray-900');
         if (privacyContent) {
             privacyContent.addEventListener('click', function(e) {
@@ -634,13 +634,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (termsModal) {
         termsModal.addEventListener('click', function(e) {
-            // Only close if clicking on the backdrop (not the modal content)
+            
             if (e.target === termsModal) {
                 closeTermsOfService();
             }
         });
         
-        // Prevent clicks inside modal content from closing
+        
         const termsContent = termsModal.querySelector('.bg-gray-900');
         if (termsContent) {
             termsContent.addEventListener('click', function(e) {
@@ -649,7 +649,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Close modals with Escape key
+    
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             if (privacyModal && !privacyModal.classList.contains('hidden')) {
@@ -661,7 +661,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Mobile menu functionality
+    
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuIcon = mobileMenuBtn.querySelector('i');
@@ -681,7 +681,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Close mobile menu when clicking on a link
+        
         const mobileLinks = mobileMenu.querySelectorAll('.nav-link-mobile');
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -691,7 +691,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Close mobile menu when clicking outside
+        
         document.addEventListener('click', function(e) {
             if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.add('hidden');
@@ -701,22 +701,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Active navigation tracking
+    
     initActiveNavigation();
 });
 
-// Active Navigation Tracking - Simple and Reliable
+
 function initActiveNavigation() {
     const navLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
     const sections = document.querySelectorAll('section[id]');
     
-    // Calculate offset for scroll
+    
     const getOffset = () => {
         const navbar = document.querySelector('nav');
         return navbar ? navbar.offsetHeight : 72;
     };
     
-    // Update active link based on scroll position
+    
     function updateActiveLink() {
         const scrollPos = window.scrollY + getOffset() + 100;
         
@@ -731,11 +731,11 @@ function initActiveNavigation() {
             }
         });
         
-        // Remove active from all links
+        
         navLinks.forEach(link => {
             link.classList.remove('active');
             
-            // Add active to matching link
+            
             const href = link.getAttribute('href');
             if (href === `#${currentSection}`) {
                 link.classList.add('active');
@@ -743,7 +743,7 @@ function initActiveNavigation() {
         });
     }
     
-    // Handle click on nav links
+    
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -755,12 +755,12 @@ function initActiveNavigation() {
             const targetSection = document.getElementById(targetId);
             
             if (targetSection) {
-                // Remove active from all
+                
                 navLinks.forEach(l => l.classList.remove('active'));
-                // Add active to clicked
+                
                 this.classList.add('active');
                 
-                // Scroll to section
+                
                 const offsetTop = targetSection.offsetTop - getOffset();
                 window.scrollTo({
                     top: offsetTop,
@@ -770,73 +770,73 @@ function initActiveNavigation() {
         });
     });
     
-    // Update on scroll
+    
     let scrollTimeout;
     window.addEventListener('scroll', () => {
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(updateActiveLink, 50);
     }, { passive: true });
     
-    // Initial update
+    
     updateActiveLink();
 }
 
-// Blocked dates for calendar (busy weekends) - Updated with more dates
+
 const blockedDates = [
-    // January 2025
+    
     '2025-01-04', '2025-01-05', '2025-01-11', '2025-01-12', '2025-01-18', '2025-01-19', '2025-01-25', '2025-01-26',
-    // February 2025  
+    
     '2025-02-01', '2025-02-02', '2025-02-08', '2025-02-09', '2025-02-15', '2025-02-16', '2025-02-22', '2025-02-23',
-    // March 2025
+    
     '2025-03-01', '2025-03-02', '2025-03-08', '2025-03-09', '2025-03-15', '2025-03-16', '2025-03-22', '2025-03-23', '2025-03-29', '2025-03-30',
-    // April 2025
+    
     '2025-04-05', '2025-04-06', '2025-04-12', '2025-04-13', '2025-04-19', '2025-04-20', '2025-04-26', '2025-04-27',
-    // May 2025 (wedding season)
+    
     '2025-05-03', '2025-05-04', '2025-05-10', '2025-05-11', '2025-05-17', '2025-05-18', '2025-05-24', '2025-05-25', '2025-05-31',
-    // June 2025 (peak wedding season)
+    
     '2025-06-01', '2025-06-07', '2025-06-08', '2025-06-14', '2025-06-15', '2025-06-21', '2025-06-22', '2025-06-28', '2025-06-29',
-    // July 2025 (peak wedding season)
+    
     '2025-07-05', '2025-07-06', '2025-07-12', '2025-07-13', '2025-07-19', '2025-07-20', '2025-07-26', '2025-07-27',
-    // August 2025 (peak wedding season)
+    
     '2025-08-02', '2025-08-03', '2025-08-09', '2025-08-10', '2025-08-16', '2025-08-17', '2025-08-23', '2025-08-24', '2025-08-30', '2025-08-31',
-    // September 2025 (wedding season)
+    
     '2025-09-06', '2025-09-07', '2025-09-13', '2025-09-14', '2025-09-20', '2025-09-21', '2025-09-27', '2025-09-28',
-    // October 2025
+    
     '2025-10-04', '2025-10-05', '2025-10-11', '2025-10-12', '2025-10-18', '2025-10-19', '2025-10-25', '2025-10-26',
-    // November 2025
+    
     '2025-11-01', '2025-11-02', '2025-11-08', '2025-11-09', '2025-11-15', '2025-11-16', '2025-11-22', '2025-11-23', '2025-11-29', '2025-11-30',
-    // December 2025
+    
     '2025-12-06', '2025-12-07', '2025-12-13', '2025-12-14', '2025-12-20', '2025-12-21', '2025-12-27', '2025-12-28'
 ];
 
-// Blocked dates loaded: ' + blockedDates.length + ' dates
 
-// Initialize calendar restrictions - Optimized
+
+
 function initCalendarRestrictions() {
     const dateInputs = document.querySelectorAll('input[type="date"]');
     if (!dateInputs.length) return;
     
     const today = new Date().toISOString().split('T')[0];
-    const blockedDatesSet = new Set(blockedDates); // Use Set for O(1) lookup
+    const blockedDatesSet = new Set(blockedDates); 
     
     dateInputs.forEach(input => {
-        // Set date constraints
+        
         input.setAttribute('min', today);
         input.setAttribute('max', '2025-12-31');
         
-        // Validate blocked dates
+        
         const validateDate = (date) => {
             if (!date) return true;
             return !blockedDatesSet.has(date);
         };
         
-        // Update input styling
+        
         const updateInputStyle = (isValid) => {
             input.style.borderColor = isValid ? 'rgba(168, 85, 247, 0.3)' : '#ef4444';
             input.style.backgroundColor = isValid ? 'rgba(15, 23, 42, 0.8)' : 'rgba(239, 68, 68, 0.1)';
         };
         
-        // Change event - validate and alert
+        
         input.addEventListener('change', function() {
             const selectedDate = this.value;
             if (!validateDate(selectedDate)) {
@@ -846,7 +846,7 @@ function initCalendarRestrictions() {
             }
         });
         
-        // Input event - real-time visual feedback
+        
         input.addEventListener('input', function() {
             const isValid = validateDate(this.value);
             updateInputStyle(isValid);
@@ -855,19 +855,19 @@ function initCalendarRestrictions() {
 }
 
 
-// Initialize critical features immediately
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Critical features - load immediately
+    
     initCalendarRestrictions();
     
-    // Non-critical features - load after a delay for better initial performance
+    
     setTimeout(() => {
         initCalendar();
         initEnhancedAnimations();
         initPricingInteractions();
     }, 500);
     
-    // Heavy features - load when page is fully loaded
+    
     window.addEventListener('load', () => {
         setTimeout(() => {
             initParticles();
@@ -875,7 +875,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Add CSS for selected calendar day
+
 const additionalStyles = document.createElement('style');
 additionalStyles.textContent = `
     .calendar-day.selected {

@@ -1,4 +1,4 @@
-/* Custom CSS Variables */
+
 :root {
     --primary-purple: #a855f7;
     --primary-pink: #ec4899;
@@ -10,7 +10,6 @@
     --darker-bg: #0f172a;
 }
 
-/* Global Styles */
 * {
     scroll-behavior: smooth;
 }
@@ -25,12 +24,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Prevent body scroll when modal is open */
+
 body.modal-open {
     overflow: hidden !important;
 }
 
-/* Performance optimizations */
+
 .particle {
     will-change: transform, opacity;
 }
@@ -42,7 +41,7 @@ body.modal-open {
     will-change: transform;
 }
 
-/* Reduce motion for users who prefer it */
+
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -56,7 +55,7 @@ body.modal-open {
     }
 }
 
-/* Navigation Styles */
+
 nav {
     background: rgba(0, 0, 0, 0.9) !important;
     backdrop-filter: blur(10px);
@@ -68,7 +67,7 @@ nav {
     width: 100%;
 }
 
-/* Mobile navigation */
+
 .nav-link-mobile {
     position: relative;
     color: white;
@@ -100,7 +99,7 @@ nav {
     border-radius: 0 0 1rem 1rem;
 }
 
-/* Tablet optimizations */
+
 @media (max-width: 1024px) and (min-width: 769px) {
     nav {
         top: 0;
@@ -110,7 +109,7 @@ nav {
         padding-top: 72px;
     }
     
-    /* Disable combo animations on tablet */
+   
     .combo-card.premium,
     .combo-card.vip {
         animation: none !important;
@@ -122,7 +121,7 @@ nav {
         animation: none !important;
     }
     
-    /* Optimize grid layouts for tablet */
+   
     .grid.lg\\:grid-cols-4 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -131,12 +130,12 @@ nav {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     
-    /* Adjust font sizes for tablet */
+   
     .amount {
         font-size: 3rem;
     }
     
-    /* Modal optimizations for small screens */
+   
     #privacy-modal .bg-gray-900,
     #terms-modal .bg-gray-900 {
         max-width: 90vw !important;
@@ -154,17 +153,17 @@ nav {
         padding-bottom: 3rem;
     }
     
-    /* Contact cards for tablet */
+   
     .contact-card {
         padding: 2rem 1.5rem;
     }
     
-    /* Form optimization */
+   
     .contact-form-wrapper {
         padding: 2rem;
     }
     
-    /* Social media layout */
+   
     .social-media-modern {
         gap: 1rem;
     }
@@ -174,13 +173,13 @@ nav {
         min-width: 80px;
     }
     
-    /* Attraction cards */
+   
     .attraction-content {
         padding: 1.5rem;
         min-height: 250px;
     }
     
-    /* Pricing cards */
+   
     .pricing-card {
         padding: 1.5rem;
     }
@@ -238,7 +237,7 @@ nav {
     background: linear-gradient(90deg, var(--primary-pink), var(--primary-purple));
 }
 
-/* Hero Section */
+
 
 .hero-bg {
     position: absolute;
@@ -274,7 +273,7 @@ nav {
     50% { background-position: 100% 50%; }
 }
 
-/* CTA Button */
+
 .cta-button {
     background: linear-gradient(45deg, var(--primary-purple), var(--primary-pink));
     border: none;
@@ -314,7 +313,7 @@ nav {
 
 
 
-/* Section Titles */
+
 .section-title {
     font-size: 3rem;
     font-weight: bold;
@@ -325,7 +324,7 @@ nav {
     background-clip: text;
 }
 
-/* Animations */
+
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -359,7 +358,7 @@ nav {
     transform: translateX(0);
 }
 
-/* Additional Animations */
+
 .zoom-in {
     opacity: 0;
     transform: scale(0.8);
@@ -382,7 +381,7 @@ nav {
     transform: rotate(0deg) scale(1);
 }
 
-/* Neon Glow Effect - Simplified for mobile */
+
 .neon-glow {
     box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
     transition: box-shadow 0.3s ease;
@@ -394,7 +393,7 @@ nav {
     }
 }
 
-/* Stat Cards */
+
 .stat-card {
     background: rgba(168, 85, 247, 0.1);
     border: 1px solid rgba(168, 85, 247, 0.3);
@@ -411,7 +410,7 @@ nav {
     box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1);
 }
 
-/* Service Cards */
+
 .service-card {
     background: rgba(15, 23, 42, 0.95);
     border: 1px solid rgba(168, 85, 247, 0.3);
@@ -466,7 +465,7 @@ nav {
     box-shadow: 0 8px 25px rgba(168, 85, 247, 0.3);
 }
 
-/* Particle Animation Classes */
+
 .particle {
     position: absolute;
     border-radius: 50%;
@@ -507,7 +506,7 @@ nav {
     }
 }
 
-/* Floating particles with different speeds */
+
 .particle-slow {
     animation-duration: 15s;
 }
@@ -520,7 +519,7 @@ nav {
     animation-duration: 7s;
 }
 
-/* Review Cards */
+
 .reviews-slider {
     display: flex;
     gap: 2rem;
@@ -557,7 +556,7 @@ nav {
     font-family: serif;
 }
 
-/* Feature Cards - Original */
+
 .feature-card {
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(168, 85, 247, 0.2);
@@ -587,7 +586,7 @@ nav {
     color: white;
 }
 
-/* Feature Cards - Simple Version */
+
 .feature-card-simple {
     background: rgba(15, 23, 42, 0.95);
     border: 2px solid rgba(168, 85, 247, 0.3);
@@ -621,7 +620,7 @@ nav {
     transform: scale(1.1);
     box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
 }
-/* About Section */
+
 .about-details ul li {
     display: flex;
     align-items: center;
@@ -635,7 +634,7 @@ nav {
     text-align: center;
 }
 
-/* Modern Contact Section */
+
 .contact-card {
     background: rgba(15, 23, 42, 0.8);
     border: 2px solid rgba(168, 85, 247, 0.3);
@@ -710,7 +709,7 @@ nav {
     transform: translateX(5px);
 }
 
-/* Modern Contact Form */
+
 .contact-form-wrapper {
     background: rgba(15, 23, 42, 0.8);
     border: 2px solid rgba(168, 85, 247, 0.3);
@@ -754,7 +753,7 @@ nav {
     color: rgba(156, 163, 175, 0.7);
 }
 
-/* Calendar styling - Enhanced */
+
 .form-input[type="date"] {
     color: white !important;
     color-scheme: dark;
@@ -788,22 +787,22 @@ nav {
     color: white !important;
 }
 
-/* Firefox date input */
+
 .form-input[type="date"]::-moz-placeholder {
     color: white !important;
 }
 
-/* Performance optimizations */
+
 * {
     box-sizing: border-box;
 }
 
-/* Optimize scrolling performance */
+
 html {
     scroll-behavior: smooth;
 }
 
-/* GPU acceleration for animated elements */
+
 .service-card,
 .feature-card-simple,
 .attraction-card,
@@ -816,23 +815,23 @@ html {
     transform: translateZ(0);
 }
 
-/* Reduce paint on scroll */
+
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeSpeed;
 }
 
-/* Mobile performance optimizations */
+
 @media (max-width: 768px) {
-    /* Reduce expensive effects on mobile */
+   
     .service-card,
     .feature-card-simple,
     .attraction-card {
-        transition: transform 0.2s ease; /* Faster transitions */
+        transition: transform 0.2s ease;
     }
     
-    /* Disable some hover effects on mobile for better performance */
+   
     .service-card:hover,
     .feature-card-simple:hover,
     .attraction-card:hover {
@@ -841,16 +840,16 @@ body {
     }
 }
 
-/* Very low-end devices optimization */
+
 @media (max-width: 480px) {
-    /* Minimal animations on very small screens */
+   
     * {
         animation-duration: 0.1s !important;
         transition-duration: 0.1s !important;
     }
 }
 
-/* Additional calendar styling */
+
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -864,7 +863,7 @@ input[type="date"] {
 }
 
 
-/* Modern Social Media */
+
 .social-media-modern {
     display: flex;
     justify-content: center;
@@ -921,7 +920,7 @@ input[type="date"] {
     transform: translateY(-5px);
 }
 
-/* Particles Background */
+
 #particles-background {
     position: fixed;
     top: 0;
@@ -933,7 +932,7 @@ input[type="date"] {
     overflow: hidden;
 }
 
-/* All sections should be above particles */
+
 section {
     position: relative;
     z-index: 10;
@@ -942,7 +941,7 @@ section {
     transform: translateZ(0);
 }
 
-/* Section Dividers */
+
 section:not(.hero-section):not(#about):before {
     content: '';
     position: absolute;
@@ -955,7 +954,7 @@ section:not(.hero-section):not(#about):before {
     z-index: 1;
 }
 
-/* Decorative divider elements */
+
 section:not(.hero-section):not(#about):after {
     content: '♪';
     position: absolute;
@@ -976,7 +975,7 @@ section:not(.hero-section):not(#about):after {
     box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
 }
 
-/* Hero section keeps its own background */
+
 .hero-section {
     background: 
         linear-gradient(rgba(15, 23, 42, 0.7), rgba(49, 46, 129, 0.8)),
@@ -993,7 +992,7 @@ section:not(.hero-section):not(#about):after {
     padding-top: 72px;
 }
 
-/* Optimize image loading */
+
 img {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
@@ -1111,7 +1110,7 @@ img {
     color: #9ca3af;
 }
 
-/* Jednolity styl tekstu w cennikach */
+
 .feature span {
     color: #e5e7eb !important;
     font-size: 0.95rem !important;
@@ -1133,7 +1132,7 @@ img {
     line-height: 1.5 !important;
 }
 
-/* Dodatkowe nadpisania dla Tailwind */
+
 .pricing-card h3.text-2xl {
     font-size: 1.5rem !important;
 }
@@ -1143,7 +1142,7 @@ img {
     font-size: 1rem !important;
 }
 
-/* Nadpisania dla sekcji atrakcji */
+
 .attraction-content p.text-gray-400 {
     color: #9ca3af !important;
     font-size: 1.125rem !important;
@@ -1183,7 +1182,7 @@ img {
 }
 
 
-/* Modern Buttons */
+
 .modern-cta-btn {
     position: relative;
     background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
@@ -1274,7 +1273,7 @@ img {
     box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
 }
 
-/* Attractions Section */
+
 .attraction-card {
     background: rgba(15, 23, 42, 0.8);
     border: 2px solid rgba(168, 85, 247, 0.3);
@@ -1378,7 +1377,7 @@ img {
     box-shadow: 0 15px 30px rgba(236, 72, 153, 0.3);
 }
 
-/* Premium Combo Package Animation */
+
 .combo-card.premium {
     position: relative;
     border: 3px solid transparent;
@@ -1398,7 +1397,7 @@ img {
     animation: comboPremiumBorder 1.5s ease-in-out infinite;
 }
 
-/* VIP Combo Package Animation */
+
 .combo-card.vip {
     position: relative;
     border: 3px solid transparent;
@@ -1418,7 +1417,7 @@ img {
     animation: comboVipBorder 2s ease-in-out infinite;
 }
 
-/* Combo Badge */
+
 .combo-badge {
     position: absolute;
     top: -10px;
@@ -1440,7 +1439,7 @@ img {
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
 
-/* Combo Animation Keyframes */
+
 @keyframes comboPremiumBorder {
     0%, 100% {
         background-position: 0% 0%, 0% 50%;
@@ -1489,7 +1488,7 @@ img {
     margin-left: 0.5rem;
 }
 
-/* FAQ Section */
+
 .faq-container {
     display: flex;
     flex-direction: column;
@@ -1555,7 +1554,7 @@ img {
     margin: 0;
 }
 
-/* Calendar Styles */
+
 #calendar-container {
     min-height: 400px;
     border: 1px solid rgba(168, 85, 247, 0.3);
@@ -1584,13 +1583,13 @@ img {
     cursor: not-allowed;
 }
 
-/* Mobile-first responsive design */
+
 @media (max-width: 768px) {
     body {
-        background-attachment: scroll; /* Better performance on mobile */
+        background-attachment: scroll;
     }
     
-    /* Disable expensive effects on mobile */
+   
     .particle {
         display: none;
     }
@@ -1599,20 +1598,20 @@ img {
         animation: none;
     }
     
-    /* Reduce animations */
+   
     * {
         animation-duration: 0.2s !important;
         transition-duration: 0.2s !important;
     }
     
-    /* Optimize transforms */
+   
     .service-card:hover,
     .feature-card-simple:hover,
     .attraction-card:hover {
         transform: translateY(-4px);
     }
     
-    /* Mobile text alignment fixes */
+   
     .service-card h3 {
         min-height: 2.5rem;
     }
@@ -1625,7 +1624,7 @@ img {
         min-height: 3rem;
     }
     
-    /* Disable combo animations on mobile */
+   
     .combo-card.premium,
     .combo-card.vip {
         animation: none !important;
@@ -1716,19 +1715,19 @@ img {
         min-width: auto;
     }
     
-    /* Optimize containers */
+   
     .container {
         padding-left: 1rem;
         padding-right: 1rem;
     }
     
-    /* Optimize sections */
+   
     section {
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
     
-    /* FAQ mobile optimization */
+   
     .faq-question {
         font-size: 1rem;
         padding: 1rem;
@@ -1738,14 +1737,14 @@ img {
         font-size: 0.9rem;
     }
     
-    /* Form optimization */
+   
     .form-group input,
     .form-group select,
     .form-group textarea {
-        font-size: 16px; /* Prevents zoom on iOS */
+        font-size: 16px;
     }
     
-    /* Modal optimization */
+   
     #privacy-modal .bg-gray-900 {
         margin: 1rem;
         padding: 1.5rem;
@@ -1753,7 +1752,7 @@ img {
     }
 }
 
-/* Tablet optimization */
+
 @media (max-width: 1024px) and (min-width: 769px) {
     .hero-title {
         font-size: 4rem;
@@ -1788,7 +1787,7 @@ img {
     }
 }
 
-/* Small mobile devices */
+
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2.2rem;
@@ -1810,7 +1809,7 @@ img {
         padding: 1rem;
     }
     
-    /* Additional mobile optimizations */
+   
     .contact-form-wrapper {
         padding: 1.5rem;
         border-radius: 1rem;
@@ -1879,7 +1878,7 @@ img {
     }
 }
 
-/* Modal optimizations - fixed positioning */
+
 #privacy-modal:not(.hidden),
 #terms-modal:not(.hidden) {
     position: fixed !important;
@@ -1918,13 +1917,13 @@ img {
     -webkit-overflow-scrolling: touch;
 }
 
-/* Content styling for better readability */
+
 #privacy-modal .text-gray-300,
 #terms-modal .text-gray-300 {
     padding-right: 1rem;
 }
 
-/* Custom scrollbar for webkit browsers */
+
 #privacy-modal .bg-gray-900::-webkit-scrollbar,
 #terms-modal .bg-gray-900::-webkit-scrollbar {
     width: 8px;
@@ -1948,7 +1947,7 @@ img {
     background: linear-gradient(45deg, rgba(168, 85, 247, 0.8), rgba(236, 72, 153, 0.8));
 }
 
-/* Tablet optimization */
+
 @media (max-width: 1024px) and (min-width: 769px) {
     #privacy-modal .bg-gray-900,
     #terms-modal .bg-gray-900 {
@@ -1964,7 +1963,7 @@ img {
         padding: 1rem !important;
     }
     
-    /* Thinner scrollbar on mobile */
+   
     #privacy-modal .bg-gray-900::-webkit-scrollbar,
     #terms-modal .bg-gray-900::-webkit-scrollbar {
         width: 6px;
@@ -2011,7 +2010,7 @@ img {
 }
 
 
-/* Mobile adjustments */
+
 @media (max-width: 768px) {
     nav {
         top: 0;
@@ -2022,7 +2021,7 @@ img {
     }
 }
 
-/* Very small screens */
+
 @media (max-width: 480px) {
     nav {
         top: 0;
